@@ -1,3 +1,4 @@
+# this code can be used for any bilocal scenario. Note that if any of the parties has no input choice, the cardinality should be one.
 import numpy as np
 import gurobipy as gp
 from gurobipy import GRB
