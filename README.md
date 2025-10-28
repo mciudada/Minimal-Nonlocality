@@ -13,4 +13,4 @@ The files used for the results of the paper are:
 - [test_bilocality.py](test_bilocality.py): this file contains a function that given a probability distribution in the bilocality scenario, it tells you whether is compatible with the two sources being classical.
 - [test_bilocal_minimal_configuration.py](test_bilocal_minimal_configuration.py): this file is an alternative formulation of test_bilocality.py but with the restriction that it can only be used for the minimal configuration of the bilocality scenario.
 
-- As explained in the paper, with minimal configuration we mean binary outputs for the three parties and binary inputs for the extreme parties (while no input for the middle-party).
+As explained in the paper, with minimal configuration we mean binary outputs for the three parties and binary inputs for the extreme parties (while no input for the middle-party).
