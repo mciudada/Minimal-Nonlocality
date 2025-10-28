@@ -1,4 +1,4 @@
-# this code can be used for any bilocal scenario. Note that if any of the parties has no input choice, the cardinality should be one.
+# this code can only be used for the minimal configuration of the bilocality scenario. Note that the cardinality of the probability distribution should be (2, 2, 2, 2, 2) (corresponding to (a, b, c, x, z))
 import numpy as np
 import gurobipy as gp
 from gurobipy import GRB
