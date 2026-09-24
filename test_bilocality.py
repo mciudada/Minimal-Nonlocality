@@ -1,7 +1,21 @@
 # this code can be used for any bilocal scenario. Note that if any of the parties has no input choice, the cardinality should be one.
 import numpy as np
+import itertools
 import gurobipy as gp
 from gurobipy import GRB
+
+def det_strats_1party(nr_outs, nr_ins):
+    '''
+    Returns all deterministic strategies for a single party as an array
+    called as det_strats[output,input,strategy_index]
+    '''
+    nrdets = nr_outs**nr_ins
+    det_strats = np.zeros((nr_outs, nr_ins, nrdets))
+    for det_idx in range(nrdets):
+        lambda_string = np.unravel_index(det_idx, [nr_outs]*nr_ins)
+        for x, ax in enumerate(lambda_string):
+            det_strats[ax, x, det_idx] = 1
+    return det_strats
 
 def testbilocal_2(prob):    
     dims = prob.shape
@@ -63,10 +77,11 @@ def testbilocal_2(prob):
 
             m.setObjective(0.0, GRB.MAXIMIZE)
             m.Params.NonConvex = 2
-            m.optimize()
             try:
                 m.optimize()
                 m.getAttr('x')  # To trigger an error in case it is not solved, because I made it silent
                 return 1
-            except:
+            elif m.Status == GRB.INFEASIBLE:
                 return 0
+            else:
+                raise RuntimeError(f"Gurobi stopped with status {m.Status}")
