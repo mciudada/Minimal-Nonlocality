@@ -1,10 +1,12 @@
-# Code to accompany ["Escaping the Shadow of Bell's Theorem in Network Nonlocality"](https://arxiv.org/abs/2406.15587)
+# Code to accompany ["Escaping the Shadow of Bell's Theorem in Network Nonlocality"]([https://arxiv.org/abs/2406.15587](https://quantum-journal.org/papers/q-2026-09-21-2213/)
 
 ## Maria Ciudad Alañón,  Emanuel-Cristian Boghiu, Paolo Abiuso and Elie Wolfe
 
 This repository contains the codes used to obtain all the results in "Escaping the Shadow of Bell's Theorem in Network Nonlocality". Maria Ciudad Alañón, Emanuel-Cristian Boghiu, Paolo Abiuso and Elie Wolfe.
 
 All the code is written in Python. They use the solver Gurobi to solve linear and bilinear problems.
+
+Given a probability distribution observed by three parties arranged in a chain (bilocality scenario), these scripts decide whether that distribution could have been produced by classical sources alone, or whether they allow for a hybrid model with one classical and one nonclassical source. Each script encodes the question as a linear or bilinear feasibility problem and solves it with Gurobi. A feasible solution means a classical (or hybrid) explanation exists, infeasibility means it does not.
 
 The files used for the results of the paper are:
 
